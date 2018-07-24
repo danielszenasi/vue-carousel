@@ -704,6 +704,8 @@ export default {
 <style>
 .VueCarousel {
   position: relative;
+  border-left: 1px solid #777777;
+  border-right: 1px solid #777777;
 }
 
 .VueCarousel-wrapper {
