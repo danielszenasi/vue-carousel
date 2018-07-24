@@ -7,8 +7,9 @@
       class="VueCarousel-navigation-button VueCarousel-navigation-prev"
       v-on:click.prevent="triggerPageAdvance('backward')"
       v-bind:class="{ 'VueCarousel-navigation--disabled': !canAdvanceBackward }"
-      v-bind:style="`padding: ${clickTargetSize}px; margin-right: -${clickTargetSize}px;`"
-      v-html="prevLabel"></button>
+      v-bind:style="`padding: ${clickTargetSize}px; margin-right: -${clickTargetSize}px;`">
+      <div class="arrow-left"></div>
+    </button>
     <button
       type="button"
       aria-label="Next page"
@@ -16,8 +17,9 @@
       class="VueCarousel-navigation-button VueCarousel-navigation-next"
       v-on:click.prevent="triggerPageAdvance()"
       v-bind:class="{ 'VueCarousel-navigation--disabled': !canAdvanceForward }"
-      v-bind:style="`padding: ${clickTargetSize}px; margin-left: -${clickTargetSize}px;`"
-      v-html="nextLabel"></button>
+      v-bind:style="`padding: ${clickTargetSize}px; margin-left: -${clickTargetSize}px;`">
+      <div class="arrow-right"></div>
+    </button>
   </div>
 </template>
 
@@ -81,6 +83,8 @@ export default {
 
 <style scoped>
 .VueCarousel-navigation-button {
+  height: 100%;
+  width: 135px;
   position: absolute;
   top: 50%;
   box-sizing: border-box;
@@ -95,20 +99,50 @@ export default {
 }
 
 .VueCarousel-navigation-next {
-  right: 0;
+  right: 135px;
   transform: translateY(-50%) translateX(100%);
   font-family: "system";
+  background: linear-gradient(to left, rgba(30, 30, 28, 1) 0%,rgba(30, 30, 28, 1) 50%, rgba(30,30,28,0.8) 70%, rgba(30,30,28,0) 100%)
+
 }
 
 .VueCarousel-navigation-prev {
-  left: 0;
+  left: 135px;
   transform: translateY(-50%) translateX(-100%);
   font-family: "system";
+  background: linear-gradient(to right, rgba(30, 30, 28, 1) 0%,rgba(30, 30, 28, 1) 50%, rgba(30,30,28,0.8) 70%, rgba(30,30,28,0) 100%)
+
 }
 
 .VueCarousel-navigation--disabled {
-  opacity: 0.5;
+  opacity: 0;
   cursor: default;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #777777;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 9px;
+  margin: auto;
+}
+
+.arrow-right {
+  height: 0;
+  width: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #777777;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 9px;
+  margin: auto;
 }
 
 /* Define the "system" font family */
