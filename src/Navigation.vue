@@ -102,16 +102,26 @@ export default {
   right: 135px;
   transform: translateY(-50%) translateX(100%);
   font-family: "system";
-  background: linear-gradient(to left, rgba(30, 30, 28, 1) 0%,rgba(30, 30, 28, 1) 50%, rgba(30,30,28,0.8) 70%, rgba(30,30,28,0) 100%)
-
+  background: linear-gradient(
+    to left,
+    rgba(30, 30, 28, 1) 0%,
+    rgba(30, 30, 28, 1) 50%,
+    rgba(30, 30, 28, 0.8) 70%,
+    rgba(30, 30, 28, 0) 100%
+  );
 }
 
 .VueCarousel-navigation-prev {
   left: 135px;
   transform: translateY(-50%) translateX(-100%);
   font-family: "system";
-  background: linear-gradient(to right, rgba(30, 30, 28, 1) 0%,rgba(30, 30, 28, 1) 50%, rgba(30,30,28,0.8) 70%, rgba(30,30,28,0) 100%)
-
+  background: linear-gradient(
+    to right,
+    rgba(30, 30, 28, 1) 0%,
+    rgba(30, 30, 28, 1) 50%,
+    rgba(30, 30, 28, 0.8) 70%,
+    rgba(30, 30, 28, 0) 100%
+  );
 }
 
 .VueCarousel-navigation--disabled {
